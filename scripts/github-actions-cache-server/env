@@ -1,3 +1,4 @@
 ACTIONS_RESULTS_URL=http://localhost:3000/
+ACTIONS_RUNNER_HOOK_JOB_STARTED=/srv/github-actions-cache-server/wait-up.sh
 SCCACHE_DIR=/cache/sccache
-SCCACHE_CACHE_SIZE="128G"
+SCCACHE_CACHE_SIZE=128G

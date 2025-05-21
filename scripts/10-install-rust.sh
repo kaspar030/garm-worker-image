@@ -12,11 +12,12 @@ curl -fsSL https://sh.rustup.rs | sh -s -- -y --default-toolchain=stable --profi
 # Initialize environment variables
 source $CARGO_HOME/env
 
+# Ensure they get reinitialized for the github runner user
+# TODO: figure out how to use '$HOME'
+prepend_etc_environment_path '/home/runner/.cargo/bin'
+
 # Install common tools
 rustup component add rustfmt clippy
 
 # Cleanup Cargo cache
 rm -rf ${CARGO_HOME}/registry/*
-
-# Update /etc/environment
-prepend_etc_environment_path '$HOME/.cargo/bin'
