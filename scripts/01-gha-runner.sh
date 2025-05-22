@@ -1,6 +1,6 @@
 echo "Installing GH actions runner..." 
 
-GHAR_VER=2.323.0
+GHAR_VER=2.324.0
 
 # Get and install the runner
 mkdir -p /opt/cache/actions-runner/latest
