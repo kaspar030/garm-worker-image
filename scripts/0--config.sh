@@ -1,0 +1,12 @@
+export RUNNER_VERSION=2.327.1
+export RUNNER_CONTAINER_HOOKS_VERSION=0.7.0
+export RUNNER_ARCH=x64
+export RUST_NIGHTLY_TOOLCHAIN=nightly-2025-02-25
+export RUST_STABLE_TOOLCHAIN=1.89.0
+export RUST_XTENSA_TOOLCHAIN_VERSION=1.85.0.0
+export RUST_XTENSA_TARGETS=esp32s3
+export RUST_TARGETS=riscv32imc-unknown-none-elf,riscv32imac-unknown-none-elf,thumbv6m-none-eabi,thumbv7m-none-eabi,thumbv7em-none-eabi,thumbv7em-none-eabihf,thumbv8m.main-none-eabi,thumbv8m.main-none-eabihf
+export RUST_COMPONENTS=rust-src,rustfmt
+export LAZE_VERSION=^0.1
+export ESPUP_VERSION=0.15.1
+export SCCACHE_VERSION=0.10.0
