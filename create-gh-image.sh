@@ -1,6 +1,6 @@
 export BASE_IMAGE="images:ubuntu/24.04/cloud"
 export TARGET_IMAGE="ubuntu-24-04-gh"
-export POOL_ID=ce38dce0-d34c-4870-bae4-20f24933a3ef
+export POOL_ID=83a23dd0-2a59-4079-8c73-8af96e5b4735
 
 set -x
 set -e
