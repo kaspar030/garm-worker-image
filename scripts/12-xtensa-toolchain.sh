@@ -1,0 +1,3 @@
+cargo install espup@${ESPUP_VERSION} --locked
+
+espup install -v ${RUST_XTENSA_TOOLCHAIN_VERSION} --targets ${RUST_XTENSA_TARGETS}
