@@ -1,20 +1,15 @@
 echo "Installing GH actions runner..." 
 
-GHAR_VER=2.328.0
-
 # Get and install the runner
-mkdir -p /opt/cache/actions-runner/latest
-cd /opt/cache/actions-runner/latest
-curl -O -L https://github.com/actions/runner/releases/download/v${GHAR_VER}/actions-runner-linux-x64-${GHAR_VER}.tar.gz
+mkdir -p /home/runner/actions-runner
+cd /home/runner/actions-runner
+curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
 # Extract the installer
-tar xzf ./actions-runner-linux-x64-${GHAR_VER}.tar.gz
-rm ./actions-runner-linux-x64-${GHAR_VER}.tar.gz
-
-# horrible hack needed by gha-cache-server so the runner doesn't overwrite ACTIONS_RESULTS_URL.
-sed -i 's/\x41\x00\x43\x00\x54\x00\x49\x00\x4F\x00\x4E\x00\x53\x00\x5F\x00\x52\x00\x45\x00\x53\x00\x55\x00\x4C\x00\x54\x00\x53\x00\x5F\x00\x55\x00\x52\x00\x4C\x00/\x41\x00\x43\x00\x54\x00\x49\x00\x4F\x00\x4E\x00\x53\x00\x5F\x00\x52\x00\x45\x00\x53\x00\x55\x00\x4C\x00\x54\x00\x53\x00\x5F\x00\x4F\x00\x52\x00\x4C\x00/g' bin/Runner.Worker.dll
+tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
+rm ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
 # install runner deps
 ./bin/installdependencies.sh
 
-export GITHUB_ENV=/opt/cache/actions-runner/latest/.env
+export GITHUB_ENV=/home/runner/actions-runner.env

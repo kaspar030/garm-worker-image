@@ -1,6 +1,5 @@
 export BASE_IMAGE="images:ubuntu/24.04/cloud"
 export TARGET_IMAGE="ubuntu-24-04-gh"
-export POOL_ID=83a23dd0-2a59-4079-8c73-8af96e5b4735
 
 set -x
 set -e
@@ -45,4 +44,4 @@ incus stop ${TARGET_IMAGE}-temp
 incus publish ${TARGET_IMAGE}-temp --alias $TARGET_IMAGE --reuse
 
 # Update garm to use the new image
-garm-cli pool update $POOL_ID --image=${TARGET_IMAGE}
+# garm-cli pool update $POOL_ID --image=${TARGET_IMAGE}

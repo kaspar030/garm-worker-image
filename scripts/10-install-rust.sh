@@ -20,9 +20,9 @@ prepend_etc_environment_path '/home/runner/.cargo/bin'
 rustup component add rustfmt clippy
 
 # Install nightly toolchain
-RUN rustup toolchain install ${RUST_NIGHTLY_TOOLCHAIN} -c ${RUST_COMPONENTS}  -t ${RUST_TARGETS}
+rustup toolchain install ${RUST_NIGHTLY_TOOLCHAIN} -c ${RUST_COMPONENTS}  -t ${RUST_TARGETS}
 # Install stable toolchain
-RUN rustup toolchain install ${RUST_STABLE_TOOLCHAIN} -c ${RUST_COMPONENTS} -t ${RUST_TARGETS}
+rustup toolchain install ${RUST_STABLE_TOOLCHAIN} -c ${RUST_COMPONENTS} -t ${RUST_TARGETS}
 
 # Cleanup Cargo cache
 rm -rf ${CARGO_HOME}/registry/*
