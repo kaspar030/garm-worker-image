@@ -4,3 +4,4 @@ apt-get -y install --no-install-recommends \
 	ninja-build gcc-arm-none-eabi gcc-riscv64-unknown-elf
 
 cargo install laze@${LAZE_VERSION} --locked
+cargo install sccache@${SCCACHE_VERSION} --locked 
