@@ -1,8 +1,8 @@
 echo "Installing GH actions runner..." 
 
-GHAR_VER=2.332.0
+GHAR_VER=2.334.0
 
-# Get and install the runner
+# Download the runner package
 mkdir -p /home/runner/actions-runner
 cd /home/runner/actions-runner
 curl -O -L https://github.com/actions/runner/releases/download/v${GHAR_VER}/actions-runner-linux-x64-${GHAR_VER}.tar.gz
@@ -14,6 +14,5 @@ rm ./actions-runner-linux-x64-${GHAR_VER}.tar.gz
 # install runner deps
 ./bin/installdependencies.sh
 
-export GITHUB_ENV=/home/runner/actions-runner/.env
-touch $GITHUB_ENV
-chown 1001:1004 $GITHUB_ENV
+# Remove the directory so GARM installs an up-to-date version
+rm -r /home/runner/actions-runner
