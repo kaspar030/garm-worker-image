@@ -58,4 +58,9 @@ jobs:
       - name: "Recreate idle runners"
         # TODO: when garm 0.2.0 gets released, use https://github.com/cloudbase/garm/pull/595
         run: |
-          garm-cli pool list -a | grep ${{ matrix.node }} | cut -d\| -f2 | xargs -n1 garm-cli runner list | grep idle | grep -o 'garm-\S*' | xargs -n1 garm-cli runner remove
+          runners=`garm-cli pool list -a | grep ${{ matrix.node }} | cut -d\| -f2 | xargs -n1 garm-cli runner list | grep idle | grep -o 'garm-\S*'`
+
+          for runner in $runners
+          do
+            garm-cli runner remove $runner
+          done
